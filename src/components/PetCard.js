@@ -11,7 +11,6 @@ const PetCard = (props) => {
   const { id, name, species, about, location, images } = props;
   return (
     <div className="card pet-card">
-
       <section className="card--header">
 
       { speciesEmoji(species) } {id} - {name}

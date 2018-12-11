@@ -15,6 +15,7 @@ class App extends Component {
 
     this.state = {
       petList: pets,
+      filteredList: pets,
       currentPet: undefined,
     };
   }
@@ -54,18 +55,34 @@ class App extends Component {
       }
     }
 
+    const searchPets = (query) => {
+      const pets = this.state.petList;
+      let regex = new RegExp(query, 'i');
+
+      const matches = []
+      for (let i = 0; i < pets.length; i++) {
+        let pet = pets[i];
+        let keywords = pet.name + ' ' + pet.species + ' ' + pet.about
+        if (regex.test(keywords)) {
+          matches.push(pet);
+        };
+      }
+      this.setState({ filteredList: matches })
+    }
+
     return (
       <main className="App">
         <header className="app-header">
           <h1>Ada Pets</h1>
         </header>
         <section className="search-bar">
-          <SearchBar />
+          <SearchBar
+            searchPetsCallback={ searchPets }/>
         </section>
           { displayPetDetails() }
         <section className="pet-list">
           <PetList
-            pets={ this.state.petList }
+            pets={ this.state.filteredList }
             onSelectPetCallback={ this.onSelectPetHandler }
             onRemovePetCallback={ this.onRemovePetHandler } />
         </section>

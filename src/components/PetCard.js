@@ -25,8 +25,9 @@ const PetCard = (props) => {
           type="button"
           className="btn btn-danger pet-card--close-btn"
           aria-label="Close"
+          onClick={ () => props.onRemovePetCallback(id) }
         >
-          Close
+          Remove
         </button>
       </section>
       <section className="pet-card--body">
@@ -46,7 +47,8 @@ PetCard.propTypes = {
   species: PropTypes.string.isRequired,
   about: PropTypes.string,
   location: PropTypes.string,
-  onSelectPetCallback: PropTypes.func.isRequired
+  onSelectPetCallback: PropTypes.func.isRequired,
+  onRemovePetCallback: PropTypes.func.isRequired
 }
 
 export default PetCard;

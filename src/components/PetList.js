@@ -12,7 +12,8 @@ const PetList = (props) => {
       <PetCard
         key={ pet.id }
         { ...pet }
-        onSelectPetCallback={ props.onSelectPetCallback } />
+        onSelectPetCallback={ props.onSelectPetCallback }
+        onRemovePetCallback={ props.onRemovePetCallback } />
     )
   });
 
@@ -25,7 +26,8 @@ const PetList = (props) => {
 
 PetList.propTypes = {
   pets: PropTypes.array.isRequired,
-  onSelectPetCallback: PropTypes.func,
+  onSelectPetCallback: PropTypes.func.isRequired,
+  onRemovePetCallback: PropTypes.func.isRequired
 };
 
 export default PetList;

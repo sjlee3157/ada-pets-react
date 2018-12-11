@@ -24,6 +24,22 @@ class App extends Component {
     this.setState({ currentPet: pet })
   }
 
+  onRemovePetHandler = (id) => {
+    let { petList, currentPet } = this.state;
+
+    for (let i = 0; i < petList.length; i++) {
+      if ( petList[i].id === id) {
+        petList.splice(i, 1)
+      }
+    }
+
+    this.setState({ petList: petList })
+
+    if (currentPet && currentPet.id === id) {
+      this.setState({ currentPet: undefined });
+    }
+  }
+
   render() {
     const { currentPet } = this.state;
     const displayPetDetails = () => {
@@ -45,7 +61,8 @@ class App extends Component {
         <section className="pet-list-wrapper">
           <PetList
             pets={ this.state.petList }
-            onSelectPetCallback={ this.onSelectPetHandler } />
+            onSelectPetCallback={ this.onSelectPetHandler }
+            onRemovePetCallback={ this.onRemovePetHandler } />
         </section>
         <section className="new-pet-form-wrapper">
           { /* Wave 3:  Where NewPetForm should appear */ }

@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PetCard from './PetCard';
+import './PetList.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 const PetList = (props) => {
   const pets = props.pets
-  const getPets = pets.map((pet) => {
+  const getPets = pets.map((pet, i) => {
     return (
       <PetCard
-        key={ pet.id }
+        key={ i }
+        id={ i }
         { ...pet }
         onSelectPetCallback={ props.onSelectPetCallback }
         onRemovePetCallback={ props.onRemovePetCallback } />
@@ -18,9 +19,11 @@ const PetList = (props) => {
   });
 
   return (
-    <div className="card-group">
-      { getPets }
-    </div>
+    <section className="app-card-list">
+      <div className="card-group">
+        { getPets }
+      </div>
+    </section>
   )
 }
 

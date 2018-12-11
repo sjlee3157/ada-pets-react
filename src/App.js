@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PetList from './components/PetList';
-import PetCard from './components/PetCard'
 import PetDetails from './components/PetDetails';
 import SearchBar from './components/SearchBar';
 import NewPetForm from './components/NewPetForm';
@@ -40,6 +39,13 @@ class App extends Component {
     }
   }
 
+  addPet = (newPet) => {
+    console.log(newPet);
+    let petList = this.state.petList
+    petList.push(newPet)
+    this.setState({ petList: petList })
+  }
+
   render() {
     const { currentPet } = this.state;
     const displayPetDetails = () => {
@@ -53,19 +59,19 @@ class App extends Component {
         <header className="app-header">
           <h1>Ada Pets</h1>
         </header>
-        <section className="search-bar-wrapper">
-          { /* Wave 4:  Place to add the SearchBar component */ }
+        <section className="search-bar">
           <SearchBar />
         </section>
           { displayPetDetails() }
-        <section className="pet-list-wrapper">
+        <section className="pet-list">
           <PetList
             pets={ this.state.petList }
             onSelectPetCallback={ this.onSelectPetHandler }
             onRemovePetCallback={ this.onRemovePetHandler } />
         </section>
         <section className="new-pet-form-wrapper">
-          { /* Wave 3:  Where NewPetForm should appear */ }
+          <NewPetForm
+            addPetCallback={ this.addPet } />
         </section>
       </main>
     );

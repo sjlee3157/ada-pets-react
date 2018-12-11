@@ -40,16 +40,18 @@ class NewPetForm extends Component {
     e.preventDefault();
 
     const { id, name, species, about, location, images } = this.state;
-    this.props.addPetCallback({ id, name, species, about, location, images });
 
-    this.setState({
-      name: '',
-      images: [],
-      species: '',
-      about: '',
-      location: '',
-      id: 0
-    })
+    if (name[0] && images[0] && species[0] ) {
+      this.props.addPetCallback({ id, name, species, about, location, images });
+      this.setState({
+        name: '',
+        images: [],
+        species: '',
+        about: '',
+        location: '',
+        id: 0
+      });
+    }
   }
 
   render() {

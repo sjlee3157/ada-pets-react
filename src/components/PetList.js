@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import PetCard from './PetCard';
-import './PetList.css'
+import './PetCard.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

@@ -36,6 +36,18 @@ class NewPetForm extends Component {
     })
   }
 
+  onAboutChangeHandler = (e) => {
+    this.setState({
+      about: e.target.value
+    })
+  }
+
+  onLocationChangeHandler = (e) => {
+    this.setState({
+      location: e.target.value
+    })
+  }
+
   onSubmitHandler = (e) => {
     e.preventDefault();
 
@@ -79,6 +91,18 @@ class NewPetForm extends Component {
           <input name ="species" id= "species"
             value={this.state.species}
             onChange={this.onSpeciesChangeHandler} />
+        </div>
+        <div>
+          <label htmlFor="about">About</label>
+          <textarea name ="about" id= "about"
+            value={this.state.about}
+            onChange={this.onAboutChangeHandler} />
+        </div>
+        <div>
+          <label htmlFor="location">Location</label>
+          <input name ="location" id= "location"
+            value={this.state.location}
+            onChange={this.onLocationChangeHandler} />
         </div>
         <input className="btn btn-success new-pet-form--submit" type="submit" name="submit" value="Add a Pet" />
       </form>

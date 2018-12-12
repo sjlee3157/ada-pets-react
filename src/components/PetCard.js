@@ -10,7 +10,8 @@ import speciesEmoji from '../speciesEmoji';
 const PetCard = (props) => {
   const { id, name, species, about, location } = props;
   return (
-    <div className="card pet-card">
+    <div className="card pet-car    d">
+     <h1>Pet Card!</h1>
 
       <section className="pet-card--header">
       <button 

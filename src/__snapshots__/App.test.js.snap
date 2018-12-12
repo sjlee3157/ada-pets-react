@@ -1,0 +1,174 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the deep snapshot 1`] = `
+<App>
+  <main
+    className="App"
+  >
+    <header
+      className="app-header"
+    >
+      <h1>
+        Ada Pets
+      </h1>
+      <h2 />
+    </header>
+    <section
+      className="search-bar"
+    >
+      <SearchBar
+        onSearchChange={[Function]}
+      >
+        <section>
+          <input
+            className="search-bar"
+            name="search-bar"
+            onChange={[Function]}
+            value=""
+          />
+        </section>
+      </SearchBar>
+    </section>
+    <section
+      className="pet-list"
+    >
+      <PetList
+        deletePetCallback={[Function]}
+        pets={Array []}
+        selectPetCallback={[Function]}
+      >
+        <div
+          className="card-group"
+        />
+      </PetList>
+    </section>
+    <section>
+      <NewPetForm
+        addPetCallback={[Function]}
+      >
+        <form
+          className="new-pet-form"
+          id="new-pet-form"
+          name="new-pet-form"
+          onSubmit={[Function]}
+        >
+          <div>
+            <label
+              className="new-pet-form--label"
+              htmlFor="Name"
+            >
+              Name
+            </label>
+            <input
+              name="name"
+              onChange={[Function]}
+              placeholder="name"
+              value=""
+            />
+          </div>
+          <div>
+            <label
+              className="new-pet-form--label"
+              htmlFor="species"
+            >
+              Species
+            </label>
+            <input
+              name="species"
+              onChange={[Function]}
+              placeholder="species"
+              value=""
+            />
+          </div>
+          <div>
+            <label
+              className="new-pet-form--label"
+              htmlFor="location"
+            >
+              Location
+            </label>
+            <input
+              name="location"
+              onChange={[Function]}
+              placeholder="location"
+              value=""
+            />
+          </div>
+          <div>
+            <label
+              className="new-pet-form--label"
+              htmlFor="image"
+            >
+              Image
+            </label>
+            <input
+              name="image"
+              onChange={[Function]}
+              placeholder="image link"
+              value=""
+            />
+          </div>
+          <div>
+            <label
+              className="new-pet-form--label"
+              htmlFor="about"
+            >
+              About
+            </label>
+          </div>
+          <div>
+            <textarea
+              className="new-pet-form--about"
+              name="about"
+              onChange={[Function]}
+              value=""
+            />
+          </div>
+          <input
+            className="btn btn-success new-pet-form--submit"
+            name="submit"
+            type="submit"
+            value="Add a Pet"
+          />
+        </form>
+      </NewPetForm>
+    </section>
+  </main>
+</App>
+`;
+
+exports[`matches the snapshot 1`] = `
+<main
+  className="App"
+>
+  <header
+    className="app-header"
+  >
+    <h1>
+      Ada Pets
+    </h1>
+    <h2 />
+  </header>
+  <section
+    className="search-bar"
+  >
+    <SearchBar
+      onSearchChange={[Function]}
+    />
+  </section>
+  <section
+    className="pet-list"
+  >
+    <PetList
+      deletePetCallback={[Function]}
+      pets={Array []}
+      selectPetCallback={[Function]}
+    />
+  </section>
+  <section>
+    <NewPetForm
+      addPetCallback={[Function]}
+    />
+  </section>
+</main>
+`;

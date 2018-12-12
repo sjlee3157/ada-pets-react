@@ -4,6 +4,9 @@ exports[`petcard will match the PetCard Snapshot 1`] = `
 <div
   className="card pet-card"
 >
+  <h1>
+    Pet Card!
+  </h1>
   <section
     className="pet-card--header"
   >

@@ -1,5 +1,403 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`matches the deep snapshot 1`] = `
+<App>
+  <main
+    className="App"
+  >
+    <header
+      className="app-header"
+    >
+      <h1>
+        Ada Pets
+      </h1>
+    </header>
+    <section
+      className="search-bar"
+    >
+      <SearchBar
+        onSearchChange={[Function]}
+      >
+        <section>
+          <input
+            className="search-bar"
+            name="search-bar"
+            onChange={[Function]}
+            placeholder="Filter Pets"
+            value=""
+          />
+        </section>
+      </SearchBar>
+    </section>
+    <section
+      className="pet-list"
+    >
+      <PetList
+        deletePetCallback={[Function]}
+        pets={
+          Array [
+            Object {
+              "about": "This is Everly. She is a 12 week old Spaniel/Jack Russell/Beagle mix. Right now she weighs about 13 pounds and will probably be a medium size when grown. Her mother was around 40 pounds. Everly is one of nine in her litter. She is outgoing and playful. She already has been hiking with my daughter and did great . She will make you smile with her bubbly personality and laugh at her antics. She is ready and waiting for her forever family. HS
+
+**It is rare that we know with certainty the ages or mixes that make up our wonderful dogs, but we do our best to be as accurate as possible based upon our many years in rescue.** 
+
+Adoption: $325 which covers quarantine, shots, worming, food, medical records, spaying/neutering, microchip, and an Alabama State Health Certificate.
+
+Transport, if needed : $120.00 We consider the transport to be of great importance and, as such, take particular care of the dogs during the trip from Alabama. We make every effort to arrive with healthy and minimally stressed dogs.",
+              "currentPet": 0,
+              "id": 1,
+              "images": Array [
+                "/images//images//images/pet-1-img-1.jpg",
+                "/images//images//images/pet-1-img-2.jpg",
+                "/images//images//images/pet-1-img-3.jpg",
+              ],
+              "location": "Seattle, WA",
+              "name": "Everly B",
+              "species": "dog",
+            },
+            Object {
+              "about": "This is Ethan. He is a 12 week old Husky/spaniel mix. Right now he weighs about 14 pounds but will be a large dog when grown. Ethan is a love of a boy. He’s quiet and gentle. He is definitely the most easy going of his 8 siblings. His demeanor is playful yet not rambunctious like most puppies. This little charmer will win you over. He does have a partial blue eye which makes him look a little odd but I think it’s gorgeous. HS
+
+
+**It is rare that we know with certainty the ages or mixes that make up our wonderful dogs, but we do our best to be as accurate as possible based upon our many years in rescue.**
+
+Adoption: $325 which covers quarantine, shots, worming, food, medical records, spaying/neutering, microchip, and an Alabama State Health Certificate.
+
+Transport, if needed : $120.00 We consider the transport to be of great importance and, as such, take particular care of the dogs during the trip from Alabama. We make every effort to arrive with healthy and minimally stressed dogs.
+
+Weight Scale: Small = less than 25
+
+Medium = 26-60
+
+Large = 61-100",
+              "currentPet": 0,
+              "id": 2,
+              "images": Array [
+                "/images//images//images/pet-2-img-1.jpg",
+                "/images//images//images/pet-2-img-3.jpg",
+              ],
+              "location": "Tacoma, WA",
+              "name": "Ethan B",
+              "species": "dog",
+            },
+            Object {
+              "about": "Baby Simba is a sweet 1 year old female. She came to the shelter because her owner could no longer care for her. Baby Simba weighs 6 pounds, gets along well with other cats, and she will be spayed before going to her forever home.
+
+Reference Baby Simba's ID number A361601. For more information about adopting from Seminole County Animal Services contact Diane Gagliano at 407-665-5208 or DGagliano@seminolecountyfl.gov",
+              "currentPet": 0,
+              "id": 3,
+              "images": Array [
+                "/images//images//images/pet-3-img-1.jpg",
+                "/images//images//images/pet-3-img-2.jpg",
+              ],
+              "location": "Bellevue, WA",
+              "name": "Baby Simba",
+              "species": "cat",
+            },
+          ]
+        }
+        selectPetCallback={[Function]}
+      >
+        <div
+          className="card-group"
+        >
+          <PetCard
+            about="This is Everly. She is a 12 week old Spaniel/Jack Russell/Beagle mix. Right now she weighs about 13 pounds and will probably be a medium size when grown. Her mother was around 40 pounds. Everly is one of nine in her litter. She is outgoing and playful. She already has been hiking with my daughter and did great . She will make you smile with her bubbly personality and laugh at her antics. She is ready and waiting for her forever family. HS
+
+**It is rare that we know with certainty the ages or mixes that make up our wonderful dogs, but we do our best to be as accurate as possible based upon our many years in rescue.** 
+
+Adoption: $325 which covers quarantine, shots, worming, food, medical records, spaying/neutering, microchip, and an Alabama State Health Certificate.
+
+Transport, if needed : $120.00 We consider the transport to be of great importance and, as such, take particular care of the dogs during the trip from Alabama. We make every effort to arrive with healthy and minimally stressed dogs."
+            currentPet={0}
+            deletePetCallback={[Function]}
+            id={1}
+            images={
+              Array [
+                "/images//images//images/pet-1-img-1.jpg",
+                "/images//images//images/pet-1-img-2.jpg",
+                "/images//images//images/pet-1-img-3.jpg",
+              ]
+            }
+            key="1"
+            location="Seattle, WA"
+            name="Everly B"
+            selectPetCallback={[Function]}
+            species="dog"
+          >
+            <div
+              className="card pet-card"
+            >
+              <section
+                className="pet-card--header"
+              >
+                <button
+                  aria-label="Close"
+                  className="close pet-card--close-btn"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    ×
+                  </span>
+                </button>
+                🐕
+                 
+                1
+                 - 
+                Everly B
+                <button
+                  className="btn btn-primary pet-card--select-pet-btn"
+                  onClick={[Function]}
+                >
+                  Select
+                </button>
+              </section>
+              <section
+                className="pet-card--body"
+              >
+                This is Everly. She is a 12 week old Spaniel/Jack Russell/Beagle mix. Right now she weighs about 13 pounds and will probably be ...
+              </section>
+              <section
+                className="pet-card--footer text-muted"
+              >
+                Seattle, WA
+              </section>
+            </div>
+          </PetCard>
+          <PetCard
+            about="This is Ethan. He is a 12 week old Husky/spaniel mix. Right now he weighs about 14 pounds but will be a large dog when grown. Ethan is a love of a boy. He’s quiet and gentle. He is definitely the most easy going of his 8 siblings. His demeanor is playful yet not rambunctious like most puppies. This little charmer will win you over. He does have a partial blue eye which makes him look a little odd but I think it’s gorgeous. HS
+
+
+**It is rare that we know with certainty the ages or mixes that make up our wonderful dogs, but we do our best to be as accurate as possible based upon our many years in rescue.**
+
+Adoption: $325 which covers quarantine, shots, worming, food, medical records, spaying/neutering, microchip, and an Alabama State Health Certificate.
+
+Transport, if needed : $120.00 We consider the transport to be of great importance and, as such, take particular care of the dogs during the trip from Alabama. We make every effort to arrive with healthy and minimally stressed dogs.
+
+Weight Scale: Small = less than 25
+
+Medium = 26-60
+
+Large = 61-100"
+            currentPet={0}
+            deletePetCallback={[Function]}
+            id={2}
+            images={
+              Array [
+                "/images//images//images/pet-2-img-1.jpg",
+                "/images//images//images/pet-2-img-3.jpg",
+              ]
+            }
+            key="2"
+            location="Tacoma, WA"
+            name="Ethan B"
+            selectPetCallback={[Function]}
+            species="dog"
+          >
+            <div
+              className="card pet-card"
+            >
+              <section
+                className="pet-card--header"
+              >
+                <button
+                  aria-label="Close"
+                  className="close pet-card--close-btn"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    ×
+                  </span>
+                </button>
+                🐕
+                 
+                2
+                 - 
+                Ethan B
+                <button
+                  className="btn btn-primary pet-card--select-pet-btn"
+                  onClick={[Function]}
+                >
+                  Select
+                </button>
+              </section>
+              <section
+                className="pet-card--body"
+              >
+                This is Ethan. He is a 12 week old Husky/spaniel mix. Right now he weighs about 14 pounds but will be a large dog when grown. Et...
+              </section>
+              <section
+                className="pet-card--footer text-muted"
+              >
+                Tacoma, WA
+              </section>
+            </div>
+          </PetCard>
+          <PetCard
+            about="Baby Simba is a sweet 1 year old female. She came to the shelter because her owner could no longer care for her. Baby Simba weighs 6 pounds, gets along well with other cats, and she will be spayed before going to her forever home.
+
+Reference Baby Simba's ID number A361601. For more information about adopting from Seminole County Animal Services contact Diane Gagliano at 407-665-5208 or DGagliano@seminolecountyfl.gov"
+            currentPet={0}
+            deletePetCallback={[Function]}
+            id={3}
+            images={
+              Array [
+                "/images//images//images/pet-3-img-1.jpg",
+                "/images//images//images/pet-3-img-2.jpg",
+              ]
+            }
+            key="3"
+            location="Bellevue, WA"
+            name="Baby Simba"
+            selectPetCallback={[Function]}
+            species="cat"
+          >
+            <div
+              className="card pet-card"
+            >
+              <section
+                className="pet-card--header"
+              >
+                <button
+                  aria-label="Close"
+                  className="close pet-card--close-btn"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                  >
+                    ×
+                  </span>
+                </button>
+                🐈
+                 
+                3
+                 - 
+                Baby Simba
+                <button
+                  className="btn btn-primary pet-card--select-pet-btn"
+                  onClick={[Function]}
+                >
+                  Select
+                </button>
+              </section>
+              <section
+                className="pet-card--body"
+              >
+                Baby Simba is a sweet 1 year old female. She came to the shelter because her owner could no longer care for her. Baby Simba weig...
+              </section>
+              <section
+                className="pet-card--footer text-muted"
+              >
+                Bellevue, WA
+              </section>
+            </div>
+          </PetCard>
+        </div>
+      </PetList>
+    </section>
+    <section>
+      <NewPetForm
+        addPetCallback={[Function]}
+      >
+        <form
+          className="new-pet-form"
+          id="new-pet-form"
+          name="new-pet-form"
+          onSubmit={[Function]}
+        >
+          <div>
+            <label
+              className="new-pet-form--label"
+              htmlFor="Name"
+            >
+              Name
+            </label>
+            <input
+              name="name"
+              onChange={[Function]}
+              placeholder="name"
+              value=""
+            />
+          </div>
+          <div>
+            <label
+              className="new-pet-form--label"
+              htmlFor="species"
+            >
+              Species
+            </label>
+            <input
+              name="species"
+              onChange={[Function]}
+              placeholder="species"
+              value=""
+            />
+          </div>
+          <div>
+            <label
+              className="new-pet-form--label"
+              htmlFor="location"
+            >
+              Location
+            </label>
+            <input
+              name="location"
+              onChange={[Function]}
+              placeholder="location"
+              value=""
+            />
+          </div>
+          <div>
+            <label
+              className="new-pet-form--label"
+              htmlFor="image"
+            >
+              Image
+            </label>
+            <input
+              name="image"
+              onChange={[Function]}
+              placeholder="image link"
+              value=""
+            />
+          </div>
+          <div>
+            <label
+              className="new-pet-form--label"
+              htmlFor="about"
+            >
+              About
+            </label>
+          </div>
+          <div>
+            <textarea
+              className="new-pet-form--about"
+              name="about"
+              onChange={[Function]}
+              value=""
+            />
+          </div>
+          <input
+            className="btn btn-success new-pet-form--submit"
+            name="submit"
+            type="submit"
+            value="Add a Pet"
+          />
+        </form>
+      </NewPetForm>
+    </section>
+  </main>
+</App>
+`;
+
 exports[`matches the snapshot 1`] = `
 <main
   className="App"

@@ -11,16 +11,17 @@
 .pet-card {
   margin: 60px 30px 0px 30px;
   display: inline-block;
+
+  .pet-card--body {
+    white-space: normal;
+  }
 }
 
-.pet-card--body {
-  white-space: normal;
-}
 
 .pet-card--select-pet-btn {
   margin-left: 15px;
 }
 
-.btn {
-  margin: 5px;
+.pet-card--close-btn {
+  float: right;
 }

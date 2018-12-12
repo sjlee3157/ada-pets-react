@@ -1,31 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './SearchBar.css';
 
-const SearchBar = (props) => {
-  const onChangeHandler = (e) => {
-    let query = e.target.value;
-    props.searchPetsCallback(query);
+class SearchBar extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      searchValue: '',
+    };
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  onSearchChange = (event) => {
+    this.setState({
+      searchValue: event.target.value,
+    });
+
+    this.props.onSearchChange(event.target.value);
   }
 
-  return (
-    <form onSubmit={ handleSubmit }>
-      <input
-        className="search-bar"
-        placeholder="Filter Pets"
-        onChange={ onChangeHandler } />
-    </form>
-  );
+  render() {
+    return (
+      <section>
+        <input
+          onChange={this.onSearchChange}
+          value={this.state.searchValue}
+          name="search-bar"
+          className="search-bar"
+          placeholder="Filter Pets"
+        />
+      </section>
+    );
+  }
 };
 
 SearchBar.propTypes = {
-  searchPetsCallback: PropTypes.func.isRequired
+  onSearchChange: PropTypes.func,
 };
 
 export default SearchBar;

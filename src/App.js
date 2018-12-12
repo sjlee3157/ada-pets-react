@@ -83,11 +83,9 @@ class App extends Component {
       return regex.test(`${pet.name}${pet.about}${pet.species}`.toUpperCase());
     });
 
-    this.setState({ petList: petList })
-
-    if (currentPet && currentPet.id === id) {
-      this.setState({ currentPet: undefined });
-    }
+    this.setState({
+      petList,
+    });
   }
 
   addPet = (newPet) => {
@@ -109,7 +107,9 @@ class App extends Component {
       if (petId === pet.id) {
         deleteIndex = index;
       }
-    }
+    });
+
+    pets.splice(deleteIndex, 1);
 
     this.setState({
       petList: pets,
@@ -117,16 +117,11 @@ class App extends Component {
     })
   }
 
-      const matches = []
-      for (let i = 0; i < pets.length; i++) {
-        let pet = pets[i];
-        let keywords = pet.name + ' ' + pet.species + ' ' + pet.about
-        if (regex.test(keywords)) {
-          matches.push(pet);
-        };
-      }
-      this.setState({ filteredList: matches })
-    }
+  render() {
+    const { currentPet } = this.state;
+    console.log(this.state.petList);
+
+    const details = currentPet ? <PetDetails currentPet={currentPet} /> : '';
 
     return (
       <main className="App">
@@ -135,19 +130,18 @@ class App extends Component {
           <h2>{this.state.errorMessage ? this.state.errorMessage: "" }</h2>
         </header>
         <section className="search-bar">
-          <SearchBar
-            searchPetsCallback={ searchPets }/>
+          <SearchBar onSearchChange={this.onSearchChange} />
         </section>
-          { displayPetDetails() }
+         {details}
         <section className="pet-list">
           <PetList
-            pets={ this.state.filteredList }
-            onSelectPetCallback={ this.onSelectPetHandler }
-            onRemovePetCallback={ this.onRemovePetHandler } />
+            selectPetCallback={this.onSelectPet}
+            deletePetCallback={this.removePet}
+            pets={this.state.petList}
+          />
         </section>
-        <section className="new-pet-form-wrapper">
-          <NewPetForm
-            addPetCallback={ this.addPet } />
+        <section>
+          <NewPetForm addPetCallback={this.addPet} />
         </section>
       </main>
     );

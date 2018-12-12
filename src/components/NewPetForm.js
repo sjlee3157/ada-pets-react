@@ -9,100 +9,68 @@ class NewPetForm extends Component {
     super(props);
 
     this.state = {
-      name: '',
-      images: [],
-      species: '',
       about: '',
       location: '',
-      id: 0
+      name: '',
+      species: '',
+      image: '',
     };
   }
 
-  onNameChangeHandler = (e) => {
+  resetState = () => {
     this.setState({
-      name: e.target.value
-    })
+      about: '',
+      location: '',
+      name: '',
+      species: '',
+      image: '',
+    });
   }
 
-  onImageChangeHandler = (e) => {
-    this.setState({
-      images: [e.target.value]
-    })
+  onFormChange = (event) => {
+    const field = event.target.name;
+    const value = event.target.value;
+
+    const updatedState = {};
+    updatedState[field] = value;
+    this.setState(updatedState);
   }
 
-  onSpeciesChangeHandler = (e) => {
-    this.setState({
-      species: e.target.value
-    })
-  }
+  onSubmit = (event) => {
+    event.preventDefault();
+    const { name, species, image } = this.state;
 
-  onAboutChangeHandler = (e) => {
-    this.setState({
-      about: e.target.value
-    })
-  }
+    if (name === '' || species === '' || image === '') return;
 
-  onLocationChangeHandler = (e) => {
-    this.setState({
-      location: e.target.value
-    })
-  }
-
-  onSubmitHandler = (e) => {
-    e.preventDefault();
-
-    const { id, name, species, about, location, images } = this.state;
-
-    if (name[0] && images[0] && species[0] ) {
-      this.props.addPetCallback({ id, name, species, about, location, images });
-      this.setState({
-        name: '',
-        images: [],
-        species: '',
-        about: '',
-        location: '',
-        id: 0
-      });
-    }
+    console.log(event);
+    this.props.addPetCallback(this.state);
+    this.resetState();
   }
 
   render() {
     return (
-      <form  className="new-pet-form"
-             name="new-pet-form"
-             id="new-pet-form"
-             onSubmit={ this.onSubmitHandler }
-             >
-        <h3>Add a Pet</h3>
+      <form onSubmit={this.onSubmit} name="new-pet-form" id="new-pet-form" className="new-pet-form">
         <div>
-          <label htmlFor="name">Name</label>
-          <input name ="name" id= "name"
-            value={this.state.name}
-            onChange={this.onNameChangeHandler} />
+          <label className="new-pet-form--label" htmlFor="Name">Name</label>
+          <input name="name" placeholder="name" onChange={this.onFormChange} value={this.state.name} />
         </div>
         <div>
-          <label htmlFor="image">Image URL</label>
-          <input name ="image" id= "image"
-            value={this.state.image}
-            onChange={this.onImageChangeHandler} />
+          <label className="new-pet-form--label" htmlFor="species">Species</label>
+          <input name="species" placeholder="species" onChange={this.onFormChange} value={this.state.species} />
         </div>
         <div>
-          <label htmlFor="species">Species</label>
-          <input name ="species" id= "species"
-            value={this.state.species}
-            onChange={this.onSpeciesChangeHandler} />
+          <label className="new-pet-form--label" htmlFor="location">Location</label>
+          <input name="location" placeholder="location" onChange={this.onFormChange} value={this.state.location} />
         </div>
         <div>
-          <label htmlFor="about">About</label>
-          <textarea name ="about" id= "about"
-            value={this.state.about}
-            onChange={this.onAboutChangeHandler} />
+          <label className="new-pet-form--label" htmlFor="image">Image</label>
+          <input name="image" placeholder="image link" onChange={this.onFormChange} value={this.state.image} />
         </div>
         <div>
-          <label htmlFor="location">Location</label>
-          <input name ="location" id= "location"
-            value={this.state.location}
-            onChange={this.onLocationChangeHandler} />
+          <label className="new-pet-form--label" htmlFor="about">About</label>
+        </div>
+        <div>
+          <textarea className="new-pet-form--about" name="about" onChange={this.onFormChange} value={this.state.about}></textarea>
         </div>
         <input className="btn btn-success new-pet-form--submit" type="submit" name="submit" value="Add a Pet" />
       </form>

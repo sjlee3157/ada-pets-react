@@ -8,7 +8,7 @@ import speciesEmoji from '../speciesEmoji';
 
 
 const PetCard = (props) => {
-  const { id, name, species, about, location, images } = props;
+  const { id, name, species, about, location } = props;
   return (
     <div className="card pet-car    d">
      <h1>Pet Card!</h1>
@@ -42,13 +42,12 @@ const PetCard = (props) => {
 
 PetCard.propTypes = {
   id: PropTypes.number.isRequired,
-  images: PropTypes.array.isRequired,
   name: PropTypes.string.isRequired,
   species: PropTypes.string.isRequired,
   about: PropTypes.string,
   location: PropTypes.string,
-  onSelectPetCallback: PropTypes.func.isRequired,
-  onRemovePetCallback: PropTypes.func.isRequired
+  deletePetCallback: PropTypes.func.isRequired,
+  selectPetCallback: PropTypes.func.isRequired,
 }
 
 export default PetCard;

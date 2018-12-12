@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`petcard will match the PetCard Snapshot 1`] = `
+<div
+  className="card pet-card"
+>
+  <section
+    className="pet-card--header"
+  >
+    <button
+      aria-label="Close"
+      className="close pet-card--close-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+      >
+        ×
+      </span>
+    </button>
+    🐕
+     
+    1
+     - 
+    stinker
+    <button
+      className="btn btn-primary pet-card--select-pet-btn"
+      onClick={[Function]}
+    >
+      Select
+    </button>
+  </section>
+  <section
+    className="pet-card--body"
+  >
+    stinky
+  </section>
+  <section
+    className="pet-card--footer text-muted"
+  />
+</div>
+`;

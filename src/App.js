@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   onSelectPet = (petId) => {
-    
+
     const selectedPet = this.state.petList.find((pet) => {
       return pet.id === petId;
     });
@@ -65,7 +65,7 @@ class App extends Component {
         deleteIndex = index;
       }
     });
-    
+
     pets.splice(deleteIndex, 1);
 
     this.setState({
@@ -75,8 +75,8 @@ class App extends Component {
 
   render() {
     const { currentPet } = this.state;
-    console.log(this.state.petList);
-    
+    // console.log(this.state.petList);
+
     const details = currentPet ? <PetDetails currentPet={currentPet} /> : '';
 
     return (
@@ -89,10 +89,10 @@ class App extends Component {
         </section>
          {details}
         <section className="pet-list">
-          <PetList 
-            selectPetCallback={this.onSelectPet} 
+          <PetList
+            selectPetCallback={this.onSelectPet}
             deletePetCallback={this.removePet}
-            pets={this.state.petList} 
+            pets={this.state.petList}
           />
         </section>
         <section>

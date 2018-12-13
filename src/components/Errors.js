@@ -2,8 +2,10 @@ import React from 'react';
 import './Errors.css';
 
 const Errors = (props) => {
-  const errorMessages = props.errors.map((message) => {
-    return <li>{ message }</li>
+  const errorMessages = props.errors.map((message, i) => {
+    return (
+      <li key={i}>{ message }</li>
+    )
   });
 
   return (

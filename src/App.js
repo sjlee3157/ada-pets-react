@@ -45,7 +45,7 @@ class App extends Component {
           }
           return newPet;
         // });
-        }).filter((pet, index) => index < 3);
+      }).filter((pet, index) => index < 4);
         this.setState({
           masterList: apiPets,
           petList: apiPets
@@ -54,7 +54,7 @@ class App extends Component {
       })
       .catch((error) => {
         // TODO
-        console.log(`Error loading pets`);
+        console.log(`Error loading pet: ${console.log(error.message)}`);
         this.setState({ errors: [...this.state.errors, error.message] });
       })
   }
@@ -85,6 +85,7 @@ class App extends Component {
 
   addPet = (newPet) => {
     newPet.id = this.state.petList.reduce((max = 0, currentPet) => max ? Math.max(max, currentPet.id): currentPet.id) + 1
+    newPet.images = [newPet.image];
     const newMasterList = [...this.state.masterList, newPet];
     this.setState({
       masterList: newMasterList,
@@ -94,18 +95,24 @@ class App extends Component {
 
   removePet = (petId) => {
     let deleteIndex = -1;
-    const pets = [...this.state.masterList];
-    pets.forEach((pet, index) => {
+    let { masterList, petList, currentPet } = this.state;
+    masterList.forEach((pet, index) => {
       if (petId === pet.id) {
         deleteIndex = index;
       }
     });
 
-    pets.splice(deleteIndex, 1);
+    masterList.splice(deleteIndex, 1);
+    petList.splice(deleteIndex, 1);
+
+    if ( currentPet && currentPet.id === petId ) {
+      currentPet = undefined;
+    }
 
     this.setState({
-      masterList: pets,
-      petList: pets
+      masterList,
+      petList,
+      currentPet
     })
   }
 

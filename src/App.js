@@ -25,19 +25,27 @@ class App extends Component {
   }
 
   onRemovePetHandler = (id) => {
-    let { petList, currentPet } = this.state;
+    let { petList, currentPet, filteredList } = this.state;
+    console.log(filteredList)
+
+    filteredList.forEach((pet, i) => {
+      if (id === pet.id) {
+        filteredList.splice(i, 1);
+      }
+    });
 
     for (let i = 0; i < petList.length; i++) {
       if ( petList[i].id === id) {
-        petList.splice(i, 1)
+        console.log(`removing ${id} ${petList[i].name}`)
+        petList.splice(i, 1);
       }
     }
 
-    this.setState({ petList: petList })
-
     if (currentPet && currentPet.id === id) {
-      this.setState({ currentPet: undefined });
-    }
+      currentPet = undefined;
+    };
+
+    this.setState({ petList, currentPet, filteredList })
   }
 
   addPet = (newPet) => {
@@ -56,18 +64,12 @@ class App extends Component {
     }
 
     const searchPets = (query) => {
-      const pets = this.state.petList;
-      let regex = new RegExp(query, 'i');
-
-      const matches = []
-      for (let i = 0; i < pets.length; i++) {
-        let pet = pets[i];
-        let keywords = pet.name + ' ' + pet.species + ' ' + pet.about
-        if (regex.test(keywords)) {
-          matches.push(pet);
-        };
-      }
-      this.setState({ filteredList: matches })
+      const regex = new RegExp(query, 'i');
+      const filteredList = (this.state.petList).filter((pet) => {
+        let keywords = pet.name + ' ' + pet.species + ' ' + pet.about;
+        return regex.test(keywords);
+      });
+      this.setState({ filteredList })
     }
 
     return (
